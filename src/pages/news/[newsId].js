@@ -94,23 +94,22 @@ NewDetails.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/news");
-  const allNews = await res.json();
-  console.log(allNews);
+// export const getStaticPaths = async () => {
+//   const res = await fetch("http://localhost:5000/news");
+//   const allNews = await res.json();
+//   console.log(allNews);
 
-  const paths = allNews?.map((news) => ({
-    params: { newsId: news.id.toString() },
-  }));
+//   const paths = allNews?.map((news) => ({
+//     params: { newsId: news.id.toString() },
+//   }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps = async ({ params }) => {
-  console.log(params.newsId);
+export const getServerSideProps = async ({ params }) => {
   const res = await fetch(`http://localhost:5000/news/${params?.newsId}`);
 
   const data = await res.json();
