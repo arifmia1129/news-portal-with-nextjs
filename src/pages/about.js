@@ -2,7 +2,7 @@ import { Button } from "antd";
 import Head from "next/head";
 import Link from "next/link";
 import RootLayout from "@/components/Layouts/RootLayout";
-
+import styles from "@/styles/About.module.css";
 
 const AboutPage = () => {
   return (
@@ -21,7 +21,7 @@ const AboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>About Us page is under developing.....</h1>
+      <h1 className={styles.header}>About Us page is under developing.....</h1>
       <Link href="/">
         <Button>Back To Home</Button>
       </Link>
@@ -30,7 +30,6 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
 
 AboutPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
