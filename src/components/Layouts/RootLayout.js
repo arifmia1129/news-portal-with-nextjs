@@ -65,7 +65,7 @@ const RootLayout = ({ children }) => {
       <Content
         style={{
           padding: "0 24px",
-          minHeight: "100vh",
+          height: "100%",
         }}
       >
         {children}
@@ -74,6 +74,7 @@ const RootLayout = ({ children }) => {
       <Footer
         style={{
           textAlign: "center",
+          marginTop: 50,
         }}
       >
         <div className={styles.line}></div>
