@@ -8,14 +8,8 @@ import {
   CommentOutlined,
   ProfileOutlined,
 } from "@ant-design/icons";
-import { useGetNewsByIdQuery } from "@/redux/features/news/newsApiSlice";
-import { useRouter } from "next/router";
 
-const NewDetails = () => {
-  const router = useRouter();
-  const { data } = useGetNewsByIdQuery(router.query.newsId);
-
-  const news = data | {};
+const NewDetails = ({ news }) => {
   return (
     <div
       style={{
